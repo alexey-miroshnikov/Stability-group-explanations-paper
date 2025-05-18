@@ -1,0 +1,26 @@
+{
+    "L2_mshap_sing_norm": [
+        1.097691993129494e-16,
+        0.6820193022913457,
+        0.6833185678753947
+    ],
+    "L2_mshap_group_norm": [
+        0.6820193022913458,
+        0.6833185678753947
+    ],
+    "L2_mshap_sing_diff": [
+        0.0,
+        0.0,
+        0.0
+    ],
+    "L2_mshap_sing_diff_tot": 0.0,
+    "L2_mshap_group_diff": [
+        0.0,
+        0.0
+    ],
+    "L2_mshap_group_diff_tot": 0.0,
+    "L2_aggr_sing_diff_shap": [
+        0.0,
+        0.0
+    ]
+}

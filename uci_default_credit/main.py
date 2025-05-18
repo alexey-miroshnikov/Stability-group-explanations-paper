@@ -53,14 +53,14 @@ def main( ):
 
         if not silent: 
             print("\n**********************")
-            print("[Step 2: variable clustering]")
+            print("[Step 1: variable clustering]")
             print("**********************")
 
         result = os.system('python ' + script_dirname + '/var_clust.py')
 
         if result !=0:
 
-            print("\n Step 2 (clustering data) failed!")
+            print("\n Step 1 (clustering data) failed!")
 
     ###########################################################################################
     # Step 2: analysis of explanations
@@ -70,14 +70,14 @@ def main( ):
 
         if not silent: 
             print("\n*********************************")
-            print("[ Step 5: analysis of explanations ]")
+            print("[ Step 2: analysis of explanations ]")
             print("***********************************")
 
         result = os.system('python ' + script_dirname + '/expl_analysis.py')
 
         if result !=0:
 
-            print("\n Step 5 (explanation analysis) failed!")
+            print("\n Step 2 (explanation analysis) failed!")
 
     ###########################################################################################
     # Step 3: plotting
@@ -87,14 +87,14 @@ def main( ):
 
         if not silent: 
             print("\n**************************")
-            print("[ Step 6: plotting results ]")
+            print("[ Step 3: plotting results ]")
             print("**************************")
 
         result = os.system('python ' + script_dirname + '/plot_results.py')
 
         if result !=0:
 
-            print("\n Step 6 (plotting results) failed!")
+            print("\n Step 3 (plotting results) failed!")
 
 if __name__=="__main__":
         main()

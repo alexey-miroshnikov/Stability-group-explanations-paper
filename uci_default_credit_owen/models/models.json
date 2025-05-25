@@ -133,7 +133,7 @@
         "PAY_AMT5",
         "PAY_AMT6"
     ],
-    "model_filename":"C:\\Users\\posto\\GitRepos\\Stability2-manuscript\\uci_default_credit/models/model.dat",
-    "data_train_filename":"C:\\Users\\posto\\GitRepos\\Stability2-manuscript\\uci_default_credit/dataset/data_train.csv",
-    "data_test_filename":"C:\\Users\\posto\\GitRepos\\Stability2-manuscript\\uci_default_credit/dataset/data_test.csv"
+    "model_filename":"C:\\Users\\posto\\GitRepos\\Stability-group-explanations-paper\\uci_default_credit_owen/models/model.dat",
+    "data_train_filename":"C:\\Users\\posto\\GitRepos\\Stability-group-explanations-paper\\uci_default_credit_owen/dataset/data_train.csv",
+    "data_test_filename":"C:\\Users\\posto\\GitRepos\\Stability-group-explanations-paper\\uci_default_credit_owen/dataset/data_test.csv"
 }

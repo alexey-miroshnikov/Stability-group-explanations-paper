@@ -5,6 +5,8 @@
 
 **/uci_default_credit_owen/explanations/expl_*.csv
 **/uci_default_credit_shap/explanations/expl_*.csv
+**/uci_superconductivity_owen/explanations/expl_*.csv
+**/uci_superconductivity_shap/explanations/expl_*.csv
 
 **/*.png
 

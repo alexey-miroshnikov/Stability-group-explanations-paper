@@ -73,8 +73,9 @@
   
    "pipeline" :
    {
-     "step_1_mic_grouping"          : 0,
-     "step_2_explain_analysis"      : 0,
-     "step_3_plot"                  : 1
+      "step_1_mic_grouping"     : 0,
+      "step_2_model_analysis"   : 0,
+      "step_3_explain_analysis" : 0,
+      "step_4_plot"             : 1
    }
 }

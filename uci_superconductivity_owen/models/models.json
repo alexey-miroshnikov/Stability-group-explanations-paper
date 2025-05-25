@@ -210,7 +210,7 @@
         "std_Valence",
         "wtd_std_Valence"
     ],
-    "model_filename":"C:\\Users\\posto\\GitRepos\\Stability2-manuscript\\uci_superconductivity/models/model.dat",
-    "data_train_filename":"C:\\Users\\posto\\GitRepos\\Stability2-manuscript\\uci_superconductivity/dataset/data_train.csv",
-    "data_test_filename":"C:\\Users\\posto\\GitRepos\\Stability2-manuscript\\uci_superconductivity/dataset/data_test.csv"
+    "model_filename":"C:\\Users\\posto\\GitRepos\\Stability-group-explanations-paper\\uci_superconductivity_owen/models/model.dat",
+    "data_train_filename":"C:\\Users\\posto\\GitRepos\\Stability-group-explanations-paper\\uci_superconductivity_owen/dataset/data_train.csv",
+    "data_test_filename":"C:\\Users\\posto\\GitRepos\\Stability-group-explanations-paper\\uci_superconductivity_owen/dataset/data_test.csv"
 }

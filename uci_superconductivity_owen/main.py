@@ -49,9 +49,10 @@ def main( ):
 
     # pipeline steps:
     pipeline = json_dict["pipeline"]    
-    step_1_mic_grouping = pipeline["step_1_mic_grouping"]
-    step_2_explain_analysis = pipeline["step_2_explain_analysis"]	
-    step_3_plot = pipeline["step_3_plot"]
+    step_1_mic_grouping = pipeline["step_1_mic_grouping"]    
+    step_2_explain_analysis = pipeline["step_2_model_analysis"]	
+    step_3_explain_analysis = pipeline["step_3_explain_analysis"]	
+    step_4_plot = pipeline["step_4_plot"]
 
 
     ###########################################################################################
@@ -71,40 +72,59 @@ def main( ):
 
             print("\n Step 1 (clustering data) failed!")
 
-
     ###########################################################################################
-    # Step 2: analysis of explanations
+    # Step 2: analysis of models
     ###########################################################################################
 
     if step_2_explain_analysis:
 
         if not silent: 
             print("\n*********************************")
-            print("[ Step 2: analysis of explanations ]")
+            print("[ Step 2: analysis of models ]")
+            print("***********************************")
+
+        result = os.system('python ' + script_dirname + '/mod_analysis.py')
+
+        if result !=0:
+
+            print("\n Step 2 (model analysis) failed!")
+
+
+
+    ###########################################################################################
+    # Step 3: analysis of explanations
+    ###########################################################################################
+
+    if step_3_explain_analysis:
+
+        if not silent: 
+            print("\n*********************************")
+            print("[ Step 3: analysis of explanations ]")
             print("***********************************")
 
         result = os.system('python ' + script_dirname + '/expl_analysis.py')
 
         if result !=0:
 
-            print("\n Step 2 (explanation analysis) failed!")
+            print("\n Step 3 (explanation analysis) failed!")
+
 
     ###########################################################################################
-    # Step 3: plotting
+    # Step 4: plotting
     ###########################################################################################
 
-    if step_3_plot:
+    if step_4_plot:
 
         if not silent: 
             print("\n**************************")
-            print("[ Step 3: plotting results ]")
+            print("[ Step 4: plotting results ]")
             print("**************************")
 
         result = os.system('python ' + script_dirname + '/plot_results.py')
 
         if result !=0:
 
-            print("\n Step 3 (plotting results) failed!")
+            print("\n Step 4 (plotting results) failed!")
 
 if __name__=="__main__":
         main()

@@ -1,3 +1,14 @@
+############################################## 
+############################################## 
+# Code authors:
+#   Alexey Miroshnikov
+#   Konstandinos Kotsiopoulos
+# Consultant:
+#   Khashayar Filom
+############################################## 
+# Version 1: May 2025
+############################################## 
+
 import os, sys
 import random
 import json

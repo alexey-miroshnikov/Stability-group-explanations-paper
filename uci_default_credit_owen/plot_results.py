@@ -1,9 +1,19 @@
+############################################## 
+############################################## 
+# Code authors:
+#   Alexey Miroshnikov
+#   Konstandinos Kotsiopoulos
+# Consultant:
+#   Khashayar Filom
+############################################## 
+# Version 1: May 2025
+############################################## 
+
 import os, sys
 import json
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt; plt.style.use('ggplot')
-import pickle
 from scipy.cluster.hierarchy import dendrogram
 from argparse import ArgumentParser
 

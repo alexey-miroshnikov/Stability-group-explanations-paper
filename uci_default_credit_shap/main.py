@@ -1,10 +1,19 @@
+############################################## 
+############################################## 
+# Code authors:
+#   Alexey Miroshnikov
+#   Konstandinos Kotsiopoulos
+# Consultant:
+#   Khashayar Filom
+############################################## 
+# Version 1: May 2025
+############################################## 
+
 import os, sys
 script_dirname = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(script_dirname)
 main_dirname = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(main_dirname)
-
-
 from argparse import ArgumentParser
 import json
 

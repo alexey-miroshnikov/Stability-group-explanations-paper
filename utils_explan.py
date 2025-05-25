@@ -3,6 +3,20 @@ import pandas as pd
 from utils import L2_norm_rv
 from utils import L2_norm_vec
 
+
+def make_expl_rand_filename(model_number,
+                            value_type,                            
+                            folder_name = "."):
+    return folder_name + \
+        "/expl_rand_model_{0}_{1}.csv".format(model_number,value_type)
+
+
+def make_expl_filename(value_type,                            
+                       folder_name = "."):
+    return folder_name + \
+        "/expl_model_{1}_value.csv".format('',value_type)
+
+
 def make_coal_expl_rand_filename(model_number,
                                     value_type,
                                     partition_idx,
@@ -17,6 +31,33 @@ def make_coal_expl_filename(value_type,
         "/expl_model_{1}_value_partition_{2}.csv".format('',value_type,partition_idx)	
 
 
+def load_expl_filename( value_type,
+                        folder_name,
+                        header=None, 
+                        verbose=True):
+
+    expl_filename = make_expl_filename( value_type, folder_name)
+    if verbose:
+        print("Loading explanations: model {0}, partition {1} "\
+            .format( '*', expl_filename) )
+    return np.array(pd.read_csv(expl_filename, header=header))
+
+
+def load_expl_rand_filename(model_number,
+                                 value_type, 
+                                 folder_name, 
+                                 header=None, 
+                                 verbose=True):
+    
+    expl_filename = make_expl_rand_filename(model_number,
+                                                 value_type,                         
+                                                 folder_name)
+    if verbose:
+        print("Loading explanations: random model, partition {0}, {1}"\
+            .format( model_number, expl_filename) )
+    return np.array(pd.read_csv(expl_filename, header=header))
+
+
 def load_coal_expl_filename(value_type,
                             partition_idx, 
                             folder_name,
@@ -27,7 +68,7 @@ def load_coal_expl_filename(value_type,
                                             folder_name)
     if verbose:
         print("Loading explanations: model {0}, partition {1}, {2}"\
-            .format( '', partition_idx, expl_filename) )
+            .format( '*', partition_idx, expl_filename) )
     return np.array(pd.read_csv(expl_filename, header=header))
 
 
@@ -42,10 +83,20 @@ def load_coal_expl_rand_filename(model_number,
                                                  partition_idx,
                                                  folder_name)
     if verbose:
-        print("Loading explanations: random model, partition {1}, {2}"\
-            .format( '', partition_idx, expl_filename) )
+        print("Loading explanations: random model {0}, partition {1}, {2}"\
+            .format( model_number, partition_idx, expl_filename) )
     return np.array(pd.read_csv(expl_filename, header=header))
 
+
+##################################################################### 
+
+def compute_glob_value_triv(value):
+
+    beta  = L2_norm_rv( value, axis=0 )        
+    beta_tot = float(L2_norm_vec(beta))
+    beta = list(beta)
+
+    return beta, beta_tot
 
 ##################################################################### 
 
@@ -61,6 +112,14 @@ def compute_glob_value(value_list):
         beta[m] = list(beta[m])
 
     return beta, beta_tot
+
+##################################################################### 
+
+def compute_aggr_glob_value_triv(glob_value,partition_list):
+    glob_aggr_value_list = [None] * len(partition_list)
+    for m in range(len(partition_list)):
+        glob_aggr_value_list[m] = aggregate_vector(glob_value,partition_list[m])
+    return glob_aggr_value_list
 
 ##################################################################### 
 

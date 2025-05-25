@@ -1,0 +1,90 @@
+{
+
+  "dataset_path" : "dataset/default_of_credit_card_clients.xls",
+
+  "exclusion_preds" : [ "MARRIAGE", "AGE", "SEX" ],
+
+  "dataset_header" : 1,
+
+  "dataset_drop_index" : true,
+
+  "data_train_proportion" : 0.9,
+
+  "example_tag" : "default_credit",
+
+  "value_type" : "shapley",
+
+  "seeds" : { "data_prep" : 123, 
+              "var_clust" : 654098453, 
+              "mod_train" : 1122872025,
+              "expl_comp" : 3972105115 },
+
+  "n_samples_clustering" : 30000,
+
+  "dep_metric" : "mic",
+
+  "n_threads_expl" : 1, 
+
+  "expl_test"  : false,
+
+  "expl_size"  : null,
+
+  "ave_size"   : null,
+
+  "partition_idx_list": null,
+
+  "partition_idx_list_plot": null,
+   
+  "model_key" : "0",
+
+  "rashomon_ball_rel_radius" : 0.15,
+  
+  "n_iterations_random_models" : 100,
+
+  "n_accepted_random_models" : 20,
+
+  "_comment" : "note thresholds are for game value computations.",
+
+  "thresholds" : [ 0.49, 0.62, 0.65, 0.77],
+  
+  "thresholds_idx_plot": [0,1,2,3],
+
+  "thresholds_" : [ 0.44, 0.49, 0.62, 0.65, 0.75, 0.76, 0.77, 0.78 ],
+  
+  "thresholds_idx_plot_": [1,2,3,6],
+
+  "model_params_dict": 
+
+     { "type": "CatBoostClassifier",
+
+       "params": { "iterations": 100,
+                      "min_data_in_leaf": 5,
+                      "depth" : 5,  
+                      "early_stopping_rounds" : null,                        
+                      "subsample": 0.8,
+                      "learning_rate": 0.1,
+                      "thread_count" : 8,
+                      "verbose": false }, 
+
+        "names": {"model_name" : "CatBoost", 
+                  "model_label" : "$\\^f_1$"}  },
+
+   "bounds_dict" : { "iterations": [ [50,300], "int" ],
+                      "subsample": [ [0.5,1.0], "float" ], 
+                      "depth": [[2,10], "int" ],
+                      "learning_rate": [ [0.025, 0.25], "float" ],
+                      "rsm": [ [0.5, 0.1], "float" ]
+                      },
+  
+  "max_ignored_features" : 3,
+
+   "progress_bar_status" : true,
+  
+   "pipeline" :
+   {
+     "step_1_mic_grouping"          : 0,
+     "step_2_explain"               : 0,
+     "step_3_explain_analysis"      : 0,
+     "step_4_plot"                  : 1
+   }
+}

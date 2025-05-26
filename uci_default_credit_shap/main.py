@@ -139,7 +139,7 @@ def main( ):
 
         if result !=0:
 
-            print("\n Step 4 (plotting results) failed!")
+            print("\n Step 5 (plotting results) failed!")
 
 if __name__=="__main__":
         main()

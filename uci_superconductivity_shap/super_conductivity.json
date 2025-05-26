@@ -1,0 +1,86 @@
+{
+   
+  "dataset_path" : "dataset/super_conductivity.csv",
+
+  "dataset_header" : 0,
+
+  "dataset_drop_index" : false,
+
+  "exclusion_preds" : [],
+
+  "data_train_proportion" : 0.9,
+
+  "value_type" : "shapley",
+
+  "seeds" : { "data_prep" : 123, 
+  "var_clust" : 654098453, 
+  "mod_train" : 1122872025,
+  "expl_comp" : 3236930990 },
+
+  "n_samples_clustering" : 30000,
+
+  "dep_metric" : "mic",
+
+  "seed" : 123,
+
+  "n_threads_expl" : 1,
+
+  "expl_test"  : false,
+
+  "expl_size"  : null,
+
+  "ave_size"   : null,
+
+  "partition_idx_list": null,
+
+  "partition_idx_list_plot": null,
+
+  "rashomon_ball_rel_radius" : 0.06,
+  
+  "n_iterations_random_models" : 1000,
+
+  "n_accepted_random_models" : 25,
+
+  "_comment" : "note thresholds are for Owen value computations. Shapley values are computed by default.",
+
+  "thresholds" : [ 0.3, 0.4, 0.5, 0.6, 0.65 ],
+
+  "thresholds_idx_plot": [0,1,2,3,4],
+
+  "thresholds_" : [ 0.1, 0.2, 0.3, 0.4, 0.5, 0.55, 0.6, 0.65 ],
+
+  "thresholds_idx_plot_": [2,3,4,5,6,7],
+
+  "model_params_dict": 
+  
+    { "type" : "CatBoostRegressor",
+
+      "params" : { "iterations": 300,
+                   "min_data_in_leaf": 5,
+                   "depth" : 8, 
+                   "early_stopping_rounds" : null,                        
+                   "subsample": 0.8,
+                   "learning_rate": 0.1,
+                   "thread_count" : 8,
+                   "verbose": false },
+        "names" : { "model_name"  : "CatBoost",
+                    "model_label" : "$\\^f_1$"} },
+
+   "bounds_dict" : { "iterations": [ [100, 500 ], "int" ],
+                      "subsample": [ [0.5, 1.0 ], "float" ], 
+                      "depth": [[4,10], "int" ],
+                      "learning_rate": [ [0.025, 0.2], "float" ],
+                      "rsm": [ [0.5, 0.1], "float" ]
+                      },
+  
+   "max_ignored_features" : 8,
+  
+   "pipeline" :
+   {
+     "step_1_mic_grouping"          : 0,
+     "step_2_explain"               : 0,
+     "step_3_model_analysis"        : 1,
+     "step_4_explain_analysis"      : 1,
+     "step_5_plot"                  : 1
+   }
+}

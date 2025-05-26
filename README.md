@@ -1,1 +1,3 @@
 # Stability-group-explanations-paper
+
+This repository is devoted to the paper titled **Feature grouping as a stabilization mechanism for game-theoretic explanations of machine learning models**. The paper is based on the second half of the preprint https://arxiv.org/abs/2102.10878v6. The PDF file of the paper is available in the main folder. The codes are for the numerical examples outlined in the last section of the paper. 
